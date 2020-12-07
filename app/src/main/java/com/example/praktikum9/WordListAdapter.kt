@@ -8,14 +8,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class WordListAdapter internal constructor(context: Context) : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
-
+//Deklarasi variabel
     private val inflater: LayoutInflater= LayoutInflater.from(context)
     private var words = emptyList<Word>()
+    //seting variabel yang berfungsi untuk klik
     var clickListener : OnClickListener? = null
     inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val wordItemView: TextView = itemView.findViewById(R.id.textView)
     }
-
+//Membuat View Holder
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerview_item,parent, false)
         return WordViewHolder(itemView)
@@ -38,7 +39,6 @@ class WordListAdapter internal constructor(context: Context) : RecyclerView.Adap
             }
         }
     }
-
 
     interface OnClickListener{
         fun onClick(position: Int)

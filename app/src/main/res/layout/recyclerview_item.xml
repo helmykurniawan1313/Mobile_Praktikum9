@@ -4,13 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
+<!-- Memberi card agar tampilan lebih bagus -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardlist"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp">
-
+<!-- Text View untuk menampilkan data -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"

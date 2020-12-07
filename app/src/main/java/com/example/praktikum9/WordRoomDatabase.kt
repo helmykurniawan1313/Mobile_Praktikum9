@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 public abstract class WordRoomDatabase : RoomDatabase(){
     abstract fun wordDao(): WordDao
 
-
+//mengatur room database
     private class  WordDataBaseCallBack (
         private val scope: CoroutineScope) : RoomDatabase.Callback(){
         override fun onOpen(db: SupportSQLiteDatabase) {
@@ -23,6 +23,7 @@ public abstract class WordRoomDatabase : RoomDatabase(){
                 }
             }
         }
+    //memberi efek tunda pada db
         suspend fun populateDatabase(wordDao: WordDao){
             wordDao.deleteALL()
 
@@ -37,6 +38,7 @@ public abstract class WordRoomDatabase : RoomDatabase(){
         @Volatile
         private var INSTANCE: WordRoomDatabase? = null
 
+        //memanggil database
         fun getDatabase(context: Context,
                         scope: CoroutineScope): WordRoomDatabase {
             val tempInstance = INSTANCE
